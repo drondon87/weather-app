@@ -1,0 +1,26 @@
+<div class="container mt-5" *ngIf="weather">
+  <div class="alert alert-danger mt-2" *ngIf="showTempAlert">
+    The {{ city }} city has a exceeded temperature of {{ weather.temp }}
+  </div>
+  <div class="alert alert-danger" *ngIf="showHumAlert">
+    The {{ city }} city has a exceeded humidity of {{ weather.humidity }}
+  </div>
+  <div class="card">
+    <h5 class="card-header">{{ city | uppercase }}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{ weather.main | uppercase }}</h5>
+      <p class="card-text">
+        The weather is
+        <span class="title_decoration">{{
+          weather.description | uppercase
+        }}</span>
+      </p>
+      <p class="card-text">
+        Temperature: <span class="title_decoration"> {{ weather.temp }} </span>
+      </p>
+      <p class="card-text">
+        Humidity: <span class="title_decoration">{{ weather.humidity }} </span>
+      </p>
+    </div>
+  </div>
+</div>
